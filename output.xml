@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.1 on win32)" generated="2026-06-24T19:31:38.703471" rpa="false" schemaversion="5">
+<suite id="s1" name="Checkbox" source="C:\Users\lenovo\demoQA\tests\checkbox.robot">
+<kw name="Ouvrir navigateur" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-24T19:31:39.168698" level="INFO">Opening browser 'edge' to base url 'https://demoqa.com/'.</msg>
+<arg>${url}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-24T19:31:39.168319" elapsed="5.710857"/>
+</kw>
+<doc>Ouvrir navigateur</doc>
+<status status="PASS" start="2026-06-24T19:31:39.167280" elapsed="5.712115"/>
+</kw>
+<test id="s1-t1" name="TC05 - Déplier L'arbre Et Cocher Desktop" line="22">
+<kw name="Naviguer vers" owner="keywords" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-24T19:31:44.884974" level="INFO">Opening url 'https://demoqa.com/checkbox'</msg>
+<arg>${url_path}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-24T19:31:44.884783" elapsed="0.615166"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//h1[@class='text-center']</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-24T19:31:45.500267" elapsed="0.209157"/>
+</kw>
+<arg>${url_check}</arg>
+<doc>Basculer vers weburl textbox</doc>
+<status status="PASS" start="2026-06-24T19:31:44.884270" elapsed="0.826284"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-24T19:31:45.762201" level="INFO">Clicking element 'xpath=//span[@class="rc-tree-switcher rc-tree-switcher_close"]'.</msg>
+<arg>xpath=//span[@class="rc-tree-switcher rc-tree-switcher_close"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-24T19:31:45.761837" elapsed="0.168856"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-24T19:31:46.432427" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-24T19:31:45.931605" elapsed="0.500975"/>
+</kw>
+<kw name="Cocher Une Case" owner="keywords">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2026-06-24T19:31:47.722703" level="INFO">${checkbox} = &lt;selenium.webdriver.remote.webelement.WebElement (session="45c1283fd08f289188bb99120443971e", element="f.97AD2988A526326183B40DFCAF6F8743.d.E7E753F248B481407AB415644A9462C0.e.44")&gt;</msg>
+<var>${checkbox}</var>
+<arg>xpath=//span[@class="rc-tree-title" and text()="Home"]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2026-06-24T19:31:46.461627" elapsed="1.261148"/>
+</kw>
+<kw name="Scroll Vers Element" owner="keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-24T19:31:47.724051" elapsed="0.292408"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-24T19:31:48.317406" level="INFO">Slept 300 milliseconds.</msg>
+<arg>0.3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-24T19:31:48.016726" elapsed="0.300840"/>
+</kw>
+<arg>${checkbox}</arg>
+<status status="PASS" start="2026-06-24T19:31:47.723306" elapsed="0.594401"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-24T19:31:48.318263" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="45c1283fd08f289188bb99120443971e", element="f.97AD2988A526326183B40DFCAF6F8743.d.E7E753F248B481407AB415644A9462C0.e.44")&gt;'.</msg>
+<arg>${checkbox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-24T19:31:48.317949" elapsed="0.163371"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2026-06-24T19:31:48.535987" level="INFO">${classes} = rc-tree-title</msg>
+<var>${classes}</var>
+<arg>${checkbox}</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2026-06-24T19:31:48.481632" elapsed="0.055387"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;rc-tree-checkbox-checked&quot; not in &quot;${classes}&quot;">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-24T19:31:48.537955" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="45c1283fd08f289188bb99120443971e", element="f.97AD2988A526326183B40DFCAF6F8743.d.E7E753F248B481407AB415644A9462C0.e.44")&gt;'.</msg>
+<arg>${checkbox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-24T19:31:48.537672" elapsed="0.341559"/>
+</kw>
+<status status="PASS" start="2026-06-24T19:31:48.537251" elapsed="0.342089"/>
+</branch>
+<status status="PASS" start="2026-06-24T19:31:48.537193" elapsed="0.342277"/>
+</if>
+<arg>Desktop</arg>
+<doc>Coche un élément dans l'arbre CheckBox</doc>
+<status status="PASS" start="2026-06-24T19:31:46.461148" elapsed="2.418433"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-24T19:31:48.938850" level="INFO">Element '//span[@class="rc-tree-title" and text()="Desktop"]' contains text 'Desktop'.</msg>
+<arg>//span[@class="rc-tree-title" and text()="Desktop"]</arg>
+<arg>Desktop</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-06-24T19:31:48.880638" elapsed="0.058344"/>
+</kw>
+<doc>Déplie le nœud Home et coche Desktop uniquement</doc>
+<tag>checkbox</tag>
+<tag>elements</tag>
+<tag>regression</tag>
+<status status="PASS" start="2026-06-24T19:31:44.879544" elapsed="4.060300"/>
+</test>
+<doc>Tests de la page Check Box — https://demoqa.com/checkbox</doc>
+<status status="PASS" start="2026-06-24T19:31:38.706117" elapsed="10.235319"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">checkbox</stat>
+<stat pass="1" fail="0" skip="0">elements</stat>
+<stat pass="1" fail="0" skip="0">regression</stat>
+</tag>
+<suite>
+<stat name="Checkbox" id="s1" pass="1" fail="0" skip="0">Checkbox</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
