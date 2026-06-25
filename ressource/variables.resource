@@ -4,8 +4,8 @@ Documentation    Configuration globale du projet DEMOQA
 *** Variables ***
 #url de base
 ${url}    https://demoqa.com/
-${Browser}   chrome             options=add_argument("--headless");add_argument("--no-sandbox");add_argument("--disable-dev-shm-usage")
-#url de text box
+${Browser}    chrome
+${chrome_options}     add_argument("--headless");add_argument("--no-sandbox");add_argument("--disable-dev-shm-usage")
 ${url_path}   https://demoqa.com/text-box
 #time à attendre
 ${TIMEOUT}          10s

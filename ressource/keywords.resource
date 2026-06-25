@@ -16,7 +16,7 @@ Remplir textbox
 
 Ouvrir navigateur
    [Documentation]      Ouvrir navigateur       
-    Open Browser          ${url}         ${Browser} 
+    Open Browser          ${url}         ${Browser}    options=${chrome_options}
 
 Fermer navigateur   
    [Documentation]     Fermer navigateur 
